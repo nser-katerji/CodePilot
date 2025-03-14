@@ -1,0 +1,24 @@
+# This is a basic workflow to help you get started with Actions
+name: AI Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  ai_code_review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set Up Ollama (Self-Hosted Runner Required)
+        run: |
+          curl -fsSL https://ollama.com/install.sh | sh
+          ollama serve &
+
+      - name: Run AI Code Review with Llama 3.2
+        uses: ./  # Points to the custom GitHub Action
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
