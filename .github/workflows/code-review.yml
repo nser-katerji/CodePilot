@@ -23,6 +23,6 @@ jobs:
       - name: Run AI Code Review with Local Llama
         run: python review.py
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.AI_TOKEN }}
 
 
