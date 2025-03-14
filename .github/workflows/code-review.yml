@@ -1,0 +1,28 @@
+name: AI Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  ai_code_review:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Install Dependencies
+        run: pip install requests PyGithub
+
+      - name: Run AI Code Review with Local Llama
+        run: python review.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.AI_TOKEN }}
+
+
