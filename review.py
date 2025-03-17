@@ -8,6 +8,9 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 REPO = os.getenv("GITHUB_REPOSITORY")
 PR_NUMBER = os.getenv("PR_NUMBER")
 
+print(f"Using Repository: {REPO}")  # Debugging
+print(f"Pull Request Number: {PR_NUMBER}")  # Debugging
+
 HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"}
 OLLAMA_URL = "http://localhost:11434/api/generate"  # Ollama API endpoint
 
