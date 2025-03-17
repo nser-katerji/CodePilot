@@ -36,7 +36,7 @@ def get_pr_diff():
 def analyze_code_with_llama(code):
     """Send code snippet to Llama 3.2 for AI review."""
     payload = {
-        "model": "llama3",
+        "model": "llama3.2",
         "prompt": f"Review this code for best practices, security, and efficiency:\n{code}",
         "stream": False
     }
