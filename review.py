@@ -42,6 +42,7 @@ def analyze_code_with_llama(code):
     }
     response = requests.post(OLLAMA_URL, json=payload)
     result = response.json()
+    print(result)  # Debugging
     return result.get("response", "No response from AI.")
 
 def post_review_comment(filename, line, comment):
