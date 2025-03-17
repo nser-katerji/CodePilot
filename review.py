@@ -37,7 +37,7 @@ def analyze_code_with_llama(code):
     """Send code snippet to Llama 3.2 for AI review."""
     payload = {
         "model": "llama3.2",
-        "prompt": f"Review this code for best practices, security, and efficiency:\n{code}",
+        "prompt": f"Review this code and give a final score for best practices, security, and efficiency:\n{code} ",
         "stream": False
     }
     response = requests.post(OLLAMA_URL, json=payload)
