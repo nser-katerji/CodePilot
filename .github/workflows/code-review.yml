@@ -24,5 +24,7 @@ jobs:
         run: python review.py
         env:
           GITHUB_TOKEN: ${{ secrets.AI_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
 
 
