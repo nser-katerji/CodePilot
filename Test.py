@@ -4,6 +4,7 @@ def find_multiples_in_range(number, start, end):
 
 # Example usage: find multiples of 5 between 10 and 30 (inclusive)
 # Output: [10, 15, 20, 25, 30]
+# print(find_multiples_in_range(5, 10, 30))
 num = int(input("Enter a number: "))
 start = int(input("Enter start of range: "))
 end = int(input("Enter end of range: "))
