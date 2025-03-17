@@ -12,6 +12,14 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      - name: Install Ollama
+        run: |
+          curl -fsSL https://ollama.com/install.sh | sh
+          sudo systemctl start ollama || ollama serve &  # Start Ollama daemon
+
+      - name: Pull Llama Model
+        run: ollama pull llama3.2
+
       - name: Set Up Python
         uses: actions/setup-python@v4
         with:
